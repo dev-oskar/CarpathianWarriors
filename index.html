@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Carpathian Warriors</title>
+  <!-- Boostrap stylesheet -->
   <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- Firebase required js -->
+  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
 
   <!-- Material Design Icons -->
   <link href="./node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
   <!-- Custom styles -->
   <link rel="stylesheet" href="/css/master.css">
-  <title>Carpathian Warriors</title>
 </head>
 
 <body>
   <!-- Navigation section -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Navbar</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><!-- <img class="thumbnail"src="./img/logo_cw.png" /> --> Carpathian Warriors </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,21 +27,30 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Główna<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            MMA
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Zawodnicy</a>
+            <a class="dropdown-item" href="#">Walki</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#">Treningi</a>
           </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">O nas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Forum</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Kontakt</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Partnerzy</a>
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
@@ -47,7 +59,6 @@
       </form>
     </div>
   </nav>
-
   <!-- Required JavaScript -->
   <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
