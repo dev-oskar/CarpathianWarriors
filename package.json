@@ -1,0 +1,38 @@
+{
+  "name": "carpathianwarriors",
+  "version": "1.0.0",
+  "description": "Carpathian Warriors Website",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/velho-oscar/CarpathianWarriors.git"
+  },
+  "keywords": [
+    "carpathian",
+    "warriors",
+    "mma",
+    "mixed",
+    "martial",
+    "arts",
+    "fight",
+    "rzeszow",
+    "walki",
+    "podarpaccy",
+    "wojownicy"
+  ],
+  "author": "Oskar Pietrucha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/velho-oscar/CarpathianWarriors/issues"
+  },
+  "homepage": "https://github.com/velho-oscar/CarpathianWarriors#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "firebase": "^4.11.0",
+    "jquery": "^3.3.1",
+    "mdi": "^2.1.99"
+  }
+}
