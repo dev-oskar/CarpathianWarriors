@@ -1,8 +1,31 @@
-body{
-  background-color: #1D1A31;
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Maven Pro Regular'), local('MavenPro-Regular'), url(https://fonts.gstatic.com/s/mavenpro/v11/7Au9p_AqnyWWAxW2Wk3Gw2QN.ttf) format('truetype');
 }
-.container{
+@font-face {
+  font-family: 'Maven Pro';
+  font-style: normal;
+  font-weight: 900;
+  src: local('Maven Pro Black'), local('MavenPro-Black'), url(https://fonts.gstatic.com/s/mavenpro/v11/7Au4p_AqnyWWAxW2Wk3OTkMdMXkG.ttf) format('truetype');
+}
+body {
+  background-color: #1D1A31;
+  box-sizing: border-box;
+  font-family: 'Maven Pro', sans-serif;
+}
+.container {
   height: 1000px;
-  background-color: rgba(0,0,0,0.7);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #ffffff;
+}
+.title {
+  text-align: center;
+}
+footer {
+  background-image: url('../img/footer-1.jpg');
+  background-position: center;
+  background-size: cover;
+  display: block;
 }
