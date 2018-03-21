@@ -89,7 +89,8 @@ a:focus, a:hover {
   background-color: #000000;
 }
 #mainNav .dropdown-item:hover{
-  color: black;
+  background-color: #000000;
+  color: red;
 }
 #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
   outline: none;
@@ -120,6 +121,12 @@ a:focus, a:hover {
   #mainNav .nav-link.active:hover {
     color: white;
   }
+  #mainNav .nav-link:hover {
+    color: red;
+  }
+  #mainNav .navbar-brand:hover {
+    color: red;
+  }
 }
 
 .masthead {
@@ -140,6 +147,7 @@ a:focus, a:hover {
 .masthead .intro-body {
   display: table-cell;
   vertical-align: middle;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 .masthead .intro-body .brand-heading {
@@ -179,9 +187,10 @@ a:focus, a:hover {
 }
 
 .btn-circle:focus, .btn-circle:hover {
-  color: white;
+  color: red;
   outline: none;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid red;
 }
 
 .content-section {
