@@ -1,38 +1,40 @@
 {
-  "name": "carpathianwarriors",
-  "version": "1.0.0",
-  "description": "Carpathian Warriors Website",
-  "main": "index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/velho-oscar/CarpathianWarriors.git"
-  },
-  "keywords": [
-    "carpathian",
-    "warriors",
-    "mma",
-    "mixed",
-    "martial",
-    "arts",
-    "fight",
-    "rzeszow",
-    "walki",
-    "podarpaccy",
-    "wojownicy"
-  ],
-  "author": "Oskar Pietrucha",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/velho-oscar/CarpathianWarriors/issues"
-  },
-  "homepage": "https://github.com/velho-oscar/CarpathianWarriors#readme",
-  "dependencies": {
-    "bootstrap": "^4.0.0",
-    "firebase": "^4.11.0",
-    "jquery": "^3.3.1",
-    "mdi": "^2.1.99"
-  }
+    "title": "CarpathianWarriors",
+    "name": "CarpathianWarriors",
+    "version": "4.0.0",
+    "description": "Carpathian Warriors website about mixed martial arts.",
+    "keywords": [
+        "mma",
+        "ksw",
+        "carpathian",
+        "warriors",
+        "spartakus",
+        "walki",
+        "boks",
+        "walki"
+    ],
+    "license": "MIT",
+    "author": "Start Bootstrap",
+    "contributors": [
+        "Oskar Pietrucha (http://velho-oscar.github.io/)"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/velho-oscar/CarpathianWarriors.git"
+    },
+    "dependencies": {
+        "bootstrap": "4.0.0",
+        "font-awesome": "4.7.0",
+        "jquery": "3.3.1",
+        "jquery.easing": "^1.4.1"
+    },
+    "devDependencies": {
+        "browser-sync": "2.23.6",
+        "gulp": "^3.9.1",
+        "gulp-clean-css": "3.9.2",
+        "gulp-header": "2.0.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^3.1.0",
+        "gulp-uglify": "3.0.0"
+    }
 }

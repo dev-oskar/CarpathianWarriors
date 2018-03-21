@@ -1,88 +1,158 @@
 <!DOCTYPE html>
 <html lang="pl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Carpathian Warriors</title>
-  <!-- Boostrap stylesheet -->
-  <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
 
-  <!-- Firebase required js -->
-  <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+  <head>
 
-  <!-- Material Design Icons -->
-  <link href="./node_modules/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
-  <!-- Custom styles -->
-  <link rel="stylesheet" href="./css/master.css">
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<body>
-  <!-- Navigation section -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#"><!-- <img class="thumbnail"src="./img/logo_cw.png" /> --> Carpathian Warriors </a> <!--TODO: Get logo done! -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <title>Carpathian Warriors - Podkarpackie MMA!</title>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Główna<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            MMA
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Zawodnicy</a>
-            <a class="dropdown-item" href="#">Walki</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Treningi</a>
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts TODO: Add .less support and import fonts there.-->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles -->
+    <link href="css/master.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand js-scroll-trigger" href="#page-top">Carpathian Warriors</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#about">O nas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#partners">Partnerzy</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                MMA
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Zawodnicy</a>
+                <a class="dropdown-item" href="#">Walki</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Treningi</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link js-scroll-trigger" href="#forum">Forum</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="masthead">
+      <div class="intro-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <h1 class="brand-heading">Carpathian Warriors</h1>
+              <p class="intro-text">Gala najlepszych zawodników.
+                <br>Nie tylko podkarpackich.</p>
+              <a href="#about" class="btn btn-circle js-scroll-trigger">
+                <i class="fa fa-angle-double-down animated"></i>
+              </a>
+            </div>
           </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">O nas</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Forum</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Kontakt</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Partnerzy</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Szukaj" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="mdi mdi-magnify"></i></button>
-      </form>
-    </div>
-  </nav>
+        </div>
+      </div>
+    </header>
 
-  <!-- Website content -->
-  <div class="container">
-    <h1 class="title">Carpathian Warriors</h1>
+    <!-- About Section -->
+    <section id="about" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>O naszej organizacji</h2>
+            <p>Mauris cursus felis nec magna fermentum luctus. Fusce accumsan dolor in eleifend imperdiet. Nunc imperdiet quam luctus varius congue. Aliquam erat volutpat. Sed augue lorem, ullamcorper iaculis neque in, tempor rhoncus sem. Fusce pellentesque ipsum maximus mi egestas condimentum.</p>
+            <p>Curabitur eu tortor elit. Donec ut rutrum orci. Sed varius rutrum dolor nec lacinia. Aliquam finibus sit amet erat vel fermentum.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Value -->
-  <pre id="object"></pre>
-  <!-- Child -->
+    <!-- Partners Section -->
+    <section id="partners" class="download-section content-section text-center">
+      <div class="container">
+        <div class="col-lg-8 mx-auto">
+          <h2>Nasi partnerzy</h2>
+          <p>Naszej organizacji pomaga wiele firm z różnych sektorów. Możesz przejrzeć tę listę lub dołączyć do niej!</p>
+          <a href="./partners.html" target="_blank" class="btn btn-default btn-lg">Zapraszamy</a>
+        </div>
+      </div>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="content-section text-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <h2>Kontakt</h2>
+            <p>Zapraszamy na nasze media społecznościowe. Znajdą tam Państwo dodatkowe materiały oraz informacje.</p>
+            <ul class="list-inline banner-social-buttons">
+              <li class="list-inline-item">
+                <a href="#" target="_blank" class="btn btn-default btn-lg">
+                  <i class="fa fa-facebook fa-fw"></i>
+                  <span class="network-name">Facebook</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank" class="btn btn-default btn-lg">
+                  <i class="fa fa-google-plus fa-fw"></i>
+                  <span class="network-name">Google+</span>
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#" target="_blank" class="btn btn-default btn-lg">
+                  <i class="fa fa-youtube fa-fw"></i>
+                  <span class="network-name">YouTube</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <footer>
-    <p>
-      Kontakt
-    </p>
-  </footer>
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+        <p>Copyright &copy; Carpathian Warriors 2018. Wszelkie prawa zastrzeżone.</p>
+      </div>
+    </footer>
 
-</div>
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <!-- Required JavaScript -->
-  <script src="./js/app.js"></script>
-  <script src="./node_modules/jquery/dist/jquery.slim.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-  <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
+    <!-- Custom scripts -->
+    <script src="js/app.js"></script>
+
+  </body>
 
 </html>
