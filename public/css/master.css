@@ -43,7 +43,7 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  color: #42DCA3;
+  color: red;
 }
 
 a:focus, a:hover {
@@ -55,7 +55,7 @@ a:focus, a:hover {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   margin-bottom: 0;
   text-transform: uppercase;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   background-color: black;
 }
 
@@ -152,10 +152,12 @@ a:focus, a:hover {
 
 .masthead .intro-body .brand-heading {
   font-size: 50px;
+  text-transform: none;
 }
 
 .masthead .intro-body .intro-text {
   font-size: 18px;
+  text-align: left;
 }
 
 @media (min-width: 768px) {
@@ -167,7 +169,8 @@ a:focus, a:hover {
     font-size: 60px;
   }
   .masthead .intro-body .intro-text {
-    font-size: 22px;
+    font-size: 18px;
+    width: 60%;
   }
 }
 
@@ -237,6 +240,12 @@ a:focus, a:hover {
   border: 1px solid red;
   outline: none;
   background-color: red;
+}
+
+.countdowntimer{
+  padding: 15px;
+  border: 1px solid white;
+  background-color: gray;
 }
 
 ul.banner-social-buttons {
