@@ -154,6 +154,10 @@ a:focus, a:hover {
   font-size: 50px;
   text-transform: none;
 }
+.main{
+  font-size: 35px !important;
+  line-height: 0.1;
+}
 
 .masthead .intro-body .intro-text {
   font-size: 18px;
@@ -202,6 +206,11 @@ a:focus, a:hover {
   /* height: 100vh; TODO: Set 100vh for specific screens. For example, it looks good at first section, but not in contact.*/
 }
 
+.gala-date{
+  text-align: left;
+  line-height: 0.1
+}
+
 .download-section {
   color: white;
   background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
@@ -243,9 +252,17 @@ a:focus, a:hover {
 }
 
 .countdowntimer{
-  padding: 15px;
-  border: 1px solid white;
-  background-color: gray;
+  padding: 10px;
+  color: black;
+  font-size: 22px;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 700;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.countdown-desc{
+  padding: 10px;
 }
 
 ul.banner-social-buttons {
@@ -266,6 +283,9 @@ ul.banner-social-buttons {
   }
   ul.banner-social-buttons li:last-child {
     margin-bottom: 0;
+  }
+  .main{
+    line-height: normal;
   }
 }
 
