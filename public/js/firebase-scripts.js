@@ -8,3 +8,18 @@
     messagingSenderId: "24911101713"
   };
   firebase.initializeApp(config);
+  var firestore = firebase.firestore();
+
+  const docRef = firestore.doc("zawodnicy/t5eOQHaqpqNPkYUOPzkd");
+  const output = document.getElementById('fighter');
+
+  getRealtimeUpdates = function(){
+    docRef.onSnapshot(function(doc){
+      if (doc && doc.exists){
+        const myData = doc.data();
+        output.innerHTML = "Imię: " + myData.imie + "<br />" + "Nazwisko: " + myData.nazwisko + "<br />" + " Waga: " + myData.waga + "<br />" + "Wzrost: " + myData.wzrost;
+      }
+    });
+  }
+
+  getRealtimeUpdates();
