@@ -12,7 +12,13 @@
 
   const docRef = firestore.doc("zawodnicy/t5eOQHaqpqNPkYUOPzkd");
   const output = document.getElementById('fightersList');
-  var fighters = [];
+  var fighters =
+  [
+     // "Wojciech",
+     // "Kamil",
+     // "Hubert",
+  ];
+  var fightersWeight = [];
   var tempDiv;
 
   getRealtimeUpdates = function(){
@@ -22,19 +28,16 @@
             var dataSup = doc.data()
             console.log(doc.id, " => ", dataSup);
 
-            // Get data and push it into the array.
-            fighters.push(dataSup.imie)
+            tempDiv = document.createElement('div');
+            tempDiv.className = "fighterBox";
+            tempDiv.id = doc.id;
+            tempDiv.innerHTML = "<p class='intro-text'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+            tempDiv.innerHTML += "<p class='intro-text'>Waga: " + dataSup.waga + " kg</p>";
+            tempDiv.innerHTML += "<p class='intro-text'>Wzrost: " + dataSup.wzrost + " cm</p>";
+            tempDiv.innerHTML += "<p class='intro-text'>Wiek: " + dataSup.wiek + "</p>";
+            output.appendChild(tempDiv);
         });
     });
-    console.log(fighters) //TODO: Only for tests. Won't show it in final version
   }
 
   getRealtimeUpdates();
-
-  function loadFighters(item, index){
-    tempDiv = document.createElement('div');
-    tempDiv.className = "fighterBox";
-    tempDiv.id = index + "-" + item;
-    tempDiv.innerHTML = item;
-    output.appendChild(tempDiv);
-  }

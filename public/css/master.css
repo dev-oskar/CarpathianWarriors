@@ -96,16 +96,27 @@ a:focus, a:hover {
   outline: none;
   background-color: transparent;
 }
-
+#fightersList{
+  text-align: center;
+  margin: auto;
+  width: 100%;
+}
 .fighterBox{
-  padding: 20px;
-  color: red;
+  width: 50%;
   float: left;
+  border: 5px solid black;
+  background-color: #505050;
+  box-sizing:border-box;
+  -moz-box-sizing:border-box; /* Firefox */
+  -webkit-box-sizing:border-box; /* Safari */
+  text-align: left;
+  padding: 10px;
 }
-.figherBox:hover{
-  background-color: grey;
+@media (max-width: 768px) {
+  .fighterBox{
+    width: 100%;
+  }
 }
-
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 20px;
