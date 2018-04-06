@@ -11,15 +11,30 @@
   var firestore = firebase.firestore();
 
   const docRef = firestore.doc("zawodnicy/t5eOQHaqpqNPkYUOPzkd");
-  const output = document.getElementById('fighter');
+  const output = document.getElementById('fightersList');
+  var fighters = [];
+  var tempDiv;
 
   getRealtimeUpdates = function(){
-    docRef.onSnapshot(function(doc){
-      if (doc && doc.exists){
-        const myData = doc.data();
-        output.innerHTML = "Imię: " + myData.imie + "<br />" + "Nazwisko: " + myData.nazwisko + "<br />" + " Waga: " + myData.waga + "<br />" + "Wzrost: " + myData.wzrost;
-      }
+        firestore.collection("zawodnicy").get().then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            var dataSup = doc.data()
+            console.log(doc.id, " => ", dataSup);
+
+            // Get data and push it into the array.
+            fighters.push(dataSup.imie)
+        });
     });
+    console.log(fighters) //TODO: Only for tests. Won't show it in final version
   }
 
   getRealtimeUpdates();
+
+  function loadFighters(item, index){
+    tempDiv = document.createElement('div');
+    tempDiv.className = "fighterBox";
+    tempDiv.id = index + "-" + item;
+    tempDiv.innerHTML = item;
+    output.appendChild(tempDiv);
+  }
