@@ -12,13 +12,6 @@
 
   const docRef = firestore.doc("zawodnicy/t5eOQHaqpqNPkYUOPzkd");
   const output = document.getElementById('fightersList');
-  var fighters =
-  [
-     // "Wojciech",
-     // "Kamil",
-     // "Hubert",
-  ];
-  var fightersWeight = [];
   var tempDiv;
 
   getRealtimeUpdates = function(){
@@ -29,12 +22,13 @@
             console.log(doc.id, " => ", dataSup);
 
             tempDiv = document.createElement('div');
-            tempDiv.className = "fighterBox";
+            tempDiv.className = "fighter-box";
             tempDiv.id = doc.id;
-            tempDiv.innerHTML = "<p class='intro-text'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
-            tempDiv.innerHTML += "<p class='intro-text'>Waga: " + dataSup.waga + " kg</p>";
-            tempDiv.innerHTML += "<p class='intro-text'>Wzrost: " + dataSup.wzrost + " cm</p>";
-            tempDiv.innerHTML += "<p class='intro-text'>Wiek: " + dataSup.wiek + "</p>";
+            tempDiv.innerHTML = "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+            tempDiv.innerHTML += "<p class='fighter-props'>Waga: " + dataSup.waga + " kg</p>";
+            tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
+            tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
+            tempDiv.style.background = "#505050 url('/img/fighters/" + doc.id + ".png')";
             output.appendChild(tempDiv);
         });
     });

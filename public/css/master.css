@@ -101,19 +101,28 @@ a:focus, a:hover {
   margin: auto;
   width: 100%;
 }
-.fighterBox{
+.fighter-box{
   width: 50%;
   float: left;
   border: 5px solid black;
   background-color: #505050;
+  background-position: right;
   box-sizing:border-box;
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box; /* Safari */
   text-align: left;
   padding: 10px;
 }
+.fighter-props{
+  line-height: 0.1;
+  padding: 5px;
+}
+.fighter-props-identity{
+  font-family: 'Cabin', sans-serif;
+  font-size: 23px;
+}
 @media (max-width: 768px) {
-  .fighterBox{
+  .fighter-box{
     width: 100%;
   }
 }
