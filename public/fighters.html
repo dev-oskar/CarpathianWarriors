@@ -87,11 +87,13 @@
         <div class="row">
           <div class="col-lg-12 mx-auto">
             <h2>Przeglądaj zawodników według:</h2>
-            <span onclick="sortBy(this)" data-sort-by="nazwisko" class="sort-data";>Alfabetycznie</span> |
-            <span onclick="sortBy(this)" data-sort-by="przynaleznosc" class="sort-data";>Klubu</span> |
-            <span onclick="sortBy(this)" data-sort-by="waga" class="sort-data";>Wagi</span> |
-            <span onclick="sortBy(this)" data-sort-by="wiek" class="sort-data";>Wieku</span> |
-            <span onclick="sortBy(this)" data-sort-by="wzrost" class="sort-data";>Wzrostu</span>
+            <div id="sort-by">
+              <span onclick="sortBy(this)" data-sort-by="nazwisko" class="sort-data";>Alfabetycznie</span> |
+              <span onclick="sortBy(this)" data-sort-by="przynaleznosc" class="sort-data";>Klubu</span> |
+              <span onclick="sortBy(this)" data-sort-by="waga" class="sort-data";>Wagi</span> |
+              <span onclick="sortBy(this)" data-sort-by="wiek" class="sort-data";>Wieku</span> |
+              <span onclick="sortBy(this)" data-sort-by="wzrost" class="sort-data";>Wzrostu</span>
+            </div>
             <br />
             <div id="fightersList">
             </div>

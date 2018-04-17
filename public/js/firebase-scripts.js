@@ -12,8 +12,11 @@
 
   const output = document.getElementById('fightersList');
   var tempDiv;
+  var detailsDiv;
 
   getRealtimeUpdates = function(){
+        output.innerHTML = "";
+
         firestore.collection('zawodnicy').get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             // doc.data() is never undefined for query doc snapshots
@@ -22,13 +25,14 @@
 
             tempDiv = document.createElement('div');
             tempDiv.className = "fighter-box";
-            tempDiv.id = doc.id;
-            tempDiv.innerHTML = "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+            tempDiv.setAttribute("onclick", "getFighterDetails(this)");
+            tempDiv.dataset.fighterId = doc.id;
+            tempDiv.innerHTML += "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
             tempDiv.innerHTML += "<p class='fighter-props'>Waga: " + dataSup.waga + " kg</p>";
             tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
             tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
             tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>"
-            tempDiv.style.background = "#505050 url('/img/fighters/" + doc.id + ".png')";
+            tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
             tempDiv.style.backgroundPosition = "30% 10%"
             output.appendChild(tempDiv);
         });
@@ -50,15 +54,41 @@
 
           tempDiv = document.createElement('div');
           tempDiv.className = "fighter-box";
-          tempDiv.id = doc.id;
-          tempDiv.innerHTML = "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+          tempDiv.setAttribute("onclick", "getFighterDetails(this)");
+          tempDiv.dataset.fighterId = doc.id;
+          tempDiv.innerHTML += "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
           tempDiv.innerHTML += "<p class='fighter-props'>Waga: " + dataSup.waga + " kg</p>";
           tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
           tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
           tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>";
-          tempDiv.style.background = "#505050 url('/img/fighters/" + doc.id + ".png')";
+          tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
           tempDiv.style.backgroundPosition = "30% 10%"
           output.appendChild(tempDiv);
-    });
-});
+        });
+      });
   }
+
+  function getFighterDetails(fighterId){
+
+      var selectedFighter = fighterId.getAttribute('data-fighter-id');
+
+      var docRef = firestore.collection('zawodnicy').doc(selectedFighter);
+      docRef.get().then(function(doc) {
+        var dataSup = doc.data();
+
+        detailsDiv = document.createElement('div');
+        detailsDiv.className = 'detail-section';
+        detailsDiv.innerHTML += "<span class='close-details' onclick='getRealtimeUpdates()'>X</span</p><br />";
+        detailsDiv.innerHTML += "<p class='detail-section-header'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+        detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + dataSup.waga + " kg</p>";
+        detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + dataSup.wzrost + " cm</p>";
+        detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + dataSup.wiek + "</p>";
+        detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + dataSup.przynaleznosc + "</p>";
+        detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Opis: </span>" + dataSup.opis + "</p>";
+        detailsDiv.innerHTML += "<img class='detail-section-avatar'" + "src='/img/fighters/" + doc.id + ".png'" + "alt='Zdjęcie zawodnika' />";
+
+        output.innerHTML = "";
+        output.appendChild(detailsDiv);
+        detailsDiv.scrollIntoView();
+      })
+  };

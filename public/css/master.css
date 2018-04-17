@@ -104,14 +104,16 @@ a:focus, a:hover {
 .fighter-box{
   width: 25%;
   float: left;
-  border: 5px solid black;
-  background-color: #505050;
-  background-position: x40%y10%;
+  border: 3px solid black;
   box-sizing:border-box;
   -moz-box-sizing:border-box; /* Firefox */
   -webkit-box-sizing:border-box; /* Safari */
   text-align: left;
   padding: 10px;
+}
+.fighter-box:hover{
+  border: 3px solid red;
+  cursor: pointer;
 }
 .sort-data{
   font-family: 'Cabin', sans-serif;
@@ -137,9 +139,53 @@ a:focus, a:hover {
   font-family: 'Cabin', sans-serif;
   font-size: 23px;
 }
+.detail-section{
+  background-color: rgb(30, 30, 30);
+  padding: 25px;
+}
+.detail-section-header{
+  font-family: 'Cabin', sans-serif;
+  font-size: 23px;
+  clear: both;
+  text-align: center;
+  line-height: 0.1;
+}
+.detail-section-text{
+  font-size: 20px;
+  clear: both;
+  text-align: left;
+  line-height: 0.1;
+}
+.detail-section-node{
+  font-family: 'Cabin', sans-serif;
+  font-weight: bold;
+}
+.detail-section-avatar{
+  z-index: 1;
+  position: absolute;
+  top: 15%;
+}
+.close-details{
+  font-family: 'Cabin', sans-serif;
+  font-size: 26px;
+  float: right;
+}
+.close-details:hover{
+  cursor: pointer;
+  color: red;
+}
 @media (max-width: 768px) {
   .fighter-box{
     width: 100%;
+  }
+  .detail-section-header{
+    line-height: normal;
+  }
+  .detail-section-avatar{
+    position: static;
+    text-align: center;
+    height: 60%;
+    width: 70%;
   }
 }
 @media (min-width: 992px) {
