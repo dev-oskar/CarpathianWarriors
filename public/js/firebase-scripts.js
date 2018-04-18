@@ -12,6 +12,7 @@ var firestore = firebase.firestore();
 
 const output = document.getElementById('fightersList');
 const clubOutput = document.getElementById('clubsList');
+var fightsOutput = document.getElementById('fights');
 var tempDiv;
 var detailsDiv;
 
@@ -57,6 +58,24 @@ getRealtimeUpdates = function() {
       clubOutput.appendChild(tempDiv);
     });
   });
+  firestore.collection('walki').get().then(function(querySnapshot) {
+    fightsOutput.innerHTML = "";
+
+    querySnapshot.forEach(function(doc){
+      var dataSup = doc.data();
+      console.log(doc.id, " => ", dataSup);
+
+      tempDiv = document.createElement('div');
+      tempDiv.className = "fight-box";
+      tempDiv.setAttribute("onclick", "getFightDetails(this)");
+      tempDiv.dataset.fightId = doc.id;
+      tempDiv.innerHTML += "<span class='fighter-one'>" + dataSup.uczestnicy.zawodnik1 + "</span>";
+      tempDiv.innerHTML += "<span class='against-sign'>VS</span>";
+      tempDiv.innerHTML += "<span class='fighter-two'>" + dataSup.uczestnicy.zawodnik2 + "</span>";
+
+      fightsOutput.appendChild(tempDiv);
+    })
+  })
 }
 
 getRealtimeUpdates();
