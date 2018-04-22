@@ -199,6 +199,7 @@ a:focus, a:hover {
   position: relative;
 }
 .fight-box:hover{
+  box-sizing: border-box;
   border: 2px solid red;
   cursor: pointer;
 }
@@ -257,6 +258,9 @@ a:focus, a:hover {
   .against-sign{
     font-size: 0.6em;
     top: 40%;
+  }
+  .fighter-one, .fighter-two{
+    font-size: 0.8em;
   }
 }
 @media (min-width: 992px) {

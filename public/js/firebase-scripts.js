@@ -133,7 +133,6 @@ function getFighterDetails(fighterId) {
 };
 
 function getClubDetails(clubId) {
-
   var selectedClub = clubId.getAttribute('data-club-id');
 
   var docRef = firestore.collection('kluby').doc(selectedClub);
@@ -153,3 +152,21 @@ function getClubDetails(clubId) {
     document.getElementById('clubs-list').scrollIntoView();
   })
 };
+
+function getFightDetails(fightId) {
+  var selectedFight = fightId.getAttribute('data-fight-id');
+
+  var docRef = firestore.collection('walki').doc(selectedFight);
+  docRef.get().then(function(doc){
+    var dataSup = doc.data();
+
+    detailsDiv = document.createElement('div');
+    detailsDiv.className = 'detail-section';
+    detailsDiv.innerHTML += "<span class='close-details' onclick='getRealtimeUpdates()'>X</span</p><br />";
+    detailsDiv.innerHTML += "<p class='detail-section-header'>" + "To dziala!" + "</p>";
+
+    fightsOutput.innerHTML = "";
+    fightsOutput.appendChild(detailsDiv);
+    document.getElementById('fights-list').scrollIntoView();
+  });
+}
