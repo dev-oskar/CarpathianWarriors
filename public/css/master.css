@@ -262,6 +262,10 @@ a:focus, a:hover {
   .fighter-one, .fighter-two{
     font-size: 0.8em;
   }
+  .old-gala{
+    background-color: rgba(255, 0, 0, 0.9);
+    color: white;
+  }
 }
 @media (min-width: 992px) {
   #mainNav {
@@ -376,7 +380,20 @@ a:focus, a:hover {
   text-align: left;
   line-height: 0.1
 }
-
+.history-section{
+  background-color: rgb(34, 34, 34);
+}
+.old-gala{
+  margin-top: 5px;
+  color: black;
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.2em;
+  background-color: rgba(255, 0, 0, 0.6);
+}
+.old-gala:hover{
+  color: white;
+  background-color: rgba(255, 0, 0, 0.9);
+}
 .download-section {
   color: white;
   background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
