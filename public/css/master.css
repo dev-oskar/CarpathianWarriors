@@ -12,12 +12,7 @@ html {
   height: 100%;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Cabin', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   margin: 0 0 35px;
@@ -85,111 +80,136 @@ a:focus, a:hover {
   outline: none;
   background-color: transparent;
 }
-#mainNav .dropdown-menu{
+
+#mainNav .dropdown-menu {
   background-color: #000000;
 }
-#mainNav .dropdown-item:hover{
+
+#mainNav .dropdown-item:hover {
   background-color: #000000;
   color: red;
 }
+
 #mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
   outline: none;
   background-color: transparent;
 }
-#fightersList{
+
+#fightersList {
   text-align: center;
   margin: auto;
   width: 100%;
 }
-.fighter-box{
+
+.fighter-box {
   width: 25%;
   float: left;
   border: 3px solid black;
-  box-sizing:border-box;
-  -moz-box-sizing:border-box; /* Firefox */
-  -webkit-box-sizing:border-box; /* Safari */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
   text-align: left;
   padding: 10px;
 }
-.fighter-box:hover{
+
+.fighter-box:hover {
   border: 3px solid red;
   cursor: pointer;
 }
-.sort-data{
+
+.sort-data {
   font-family: 'Cabin', sans-serif;
   font-size: 1.2em;
 }
-.sort-data:hover{
+
+.sort-data:hover {
   color: red;
   cursor: pointer;
 }
-.fighter-props{
+
+.fighter-props {
   line-height: 0.1;
   padding: 5px;
 }
-.fighter-props-club{
+
+.fighter-props-club {
   font-family: 'Cabin', sans-serif;
   font-size: 1.1em;
   text-align: center;
   color: red;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
 }
-.fighter-props-identity{
+
+.fighter-props-identity {
   font-family: 'Cabin', sans-serif;
   font-size: 23px;
 }
-.detail-section{
+
+.detail-section {
   background-color: rgb(30, 30, 30);
   padding: 25px;
 }
-.detail-section-header{
+
+.detail-section-header {
   font-family: 'Cabin', sans-serif;
   font-size: 23px;
-  clear: both;
+  /* clear: both; */
   text-align: center;
   line-height: 0.1;
 }
-.detail-section-text{
+
+.detail-section-text {
   font-size: 20px;
   clear: both;
   text-align: left;
   line-height: 0.1;
 }
-.detail-section-node{
+
+.detail-section-node {
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
 }
-.detail-section-avatar{
+
+.detail-section-avatar {
   z-index: 1;
   position: absolute;
   top: 15%;
 }
-.close-details{
+
+.close-details {
   font-family: 'Cabin', sans-serif;
   font-size: 26px;
   float: right;
 }
-.close-details:hover{
+
+.close-details:hover {
   cursor: pointer;
   color: red;
 }
-.club-box{
+
+.club-box {
   width: 50%;
   height: 220px;
   float: left;
   border: 3px solid black;
-  box-sizing:border-box;
-  -moz-box-sizing:border-box; /* Firefox */
-  -webkit-box-sizing:border-box; /* Safari */
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  /* Firefox */
+  -webkit-box-sizing: border-box;
+  /* Safari */
   text-align: left;
   padding: 10px;
 }
-.club-box:hover{
+
+.club-box:hover {
   border: 3px solid white;
   cursor: pointer;
 }
-.fight-box{
+
+.fight-box {
   width: 100%;
   height: 2.2em;
   background-color: rgb(34, 34, 34);
@@ -198,75 +218,83 @@ a:focus, a:hover {
   margin-top: 10px;
   position: relative;
 }
-.fight-box:hover{
+
+.fight-box:hover {
   box-sizing: border-box;
   border: 2px solid red;
   cursor: pointer;
 }
-.against-sign{
+
+.against-sign {
   position: absolute;
   left: 50%;
   top: 20%;
   display: block;
   color: red;
 }
-.fighter-one{
+
+.fighter-one {
   position: absolute;
   left: 20px;
   top: 20%;
   display: block;
 }
-.fighter-two{
+
+.fighter-two {
   position: absolute;
   right: 20px;
   top: 20%;
   display: block;
 }
-.footer-bugreport{
+
+.footer-bugreport {
   font-size: 10px;
   color: grey;
 }
-.club-header{
+
+.club-header {
   padding: 5px 15px;
   font-family: 'Cabin', sans-serif;
   font-size: 30px;
   clear: both;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
 @media (max-width: 768px) {
-  .fighter-box{
+  .fighter-box {
     width: 100%;
   }
-  .detail-section-header{
+  .detail-section-header {
     line-height: normal;
   }
-  .detail-section-avatar{
+  .detail-section-avatar {
     position: static;
     text-align: center;
     height: 60%;
     width: 70%;
   }
-  .detail-section-text{
+  .detail-section-text {
     line-height: 1;
   }
-  .club-box{
+  .club-box {
     width: 100%;
   }
-  .fight-box{
+  .fight-box {
     font-size: 1.1em;
   }
-  .against-sign{
+  .against-sign {
     font-size: 0.6em;
     top: 40%;
   }
-  .fighter-one, .fighter-two{
+  .fighter-one, .fighter-two {
     font-size: 0.8em;
   }
-  .old-gala{
+  .old-gala {
     background-color: rgba(255, 0, 0, 0.9);
     color: white;
   }
 }
+
 @media (min-width: 992px) {
   #mainNav {
     padding-top: 20px;
@@ -324,7 +352,8 @@ a:focus, a:hover {
   font-size: 50px;
   text-transform: none;
 }
-.main{
+
+.main {
   font-size: 35px !important;
   line-height: 0.1;
 }
@@ -376,24 +405,28 @@ a:focus, a:hover {
   /* height: 100vh; TODO: Set 100vh for specific screens. For example, it looks good at first section, but not in contact.*/
 }
 
-.gala-date{
+.gala-date {
   text-align: left;
   line-height: 0.1
 }
-.history-section{
+
+.history-section {
   background-color: rgb(34, 34, 34);
 }
-.old-gala{
+
+.old-gala {
   margin-top: 5px;
   color: black;
   font-family: 'Cabin', sans-serif;
   font-size: 1.2em;
   background-color: rgba(255, 0, 0, 0.6);
 }
-.old-gala:hover{
+
+.old-gala:hover {
   color: white;
   background-color: rgba(255, 0, 0, 0.9);
 }
+
 .download-section {
   color: white;
   background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
@@ -434,7 +467,7 @@ a:focus, a:hover {
   background-color: red;
 }
 
-.countdowntimer{
+.countdowntimer {
   padding: 10px;
   color: black;
   font-size: 22px;
@@ -444,7 +477,7 @@ a:focus, a:hover {
   border-radius: 10px;
 }
 
-.countdown-desc{
+.countdown-desc {
   padding: 10px;
 }
 
@@ -467,7 +500,7 @@ ul.banner-social-buttons {
   ul.banner-social-buttons li:last-child {
     margin-bottom: 0;
   }
-  .main{
+  .main {
     line-height: normal;
   }
 }
