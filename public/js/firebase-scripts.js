@@ -24,7 +24,6 @@ getRealtimeUpdates = function() {
     querySnapshot.forEach(function(doc) {
       // doc.data() is never undefined for query doc snapshots
       var dataSup = doc.data();
-      console.log(doc.id, " => ", dataSup);
 
       tempDiv = document.createElement('div');
       tempDiv.className = "fighter-box";
@@ -45,7 +44,6 @@ getRealtimeUpdates = function() {
 
     querySnapshot.forEach(function(doc){
       var dataSup = doc.data();
-      console.log(doc.id, " => ", dataSup);
 
       tempDiv = document.createElement('div');
       tempDiv.className = "club-box";
@@ -63,7 +61,6 @@ getRealtimeUpdates = function() {
 
     querySnapshot.forEach(function(doc){
       var dataSup = doc.data();
-      console.log(doc.id, " => ", dataSup);
 
       tempDiv = document.createElement('div');
       tempDiv.className = "fight-box";
@@ -89,7 +86,7 @@ function sortBy(type) {
   firestore.collection('zawodnicy').orderBy(selectedSorting).get().then(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
       var dataSup = doc.data();
-      console.log(doc.id, " => ", dataSup);
+      (doc.id, " => ", dataSup);
 
       tempDiv = document.createElement('div');
       tempDiv.className = "fighter-box";
@@ -172,26 +169,44 @@ function getFightDetails(fightId) {
 
     fighterOneSup.get().then(function(doc){
       var fighterOneName = doc.data().imie + " " + doc.data().nazwisko;
-      detailsDiv.innerHTML += "<p class='detail-section-header' style='float: left; padding: 5px;'>" + fighterOneName + "</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: left;'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: left;'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: left;'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: left;'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+      var tempDiv = document.createElement('div');
+
+      tempDiv.className = 'fighterOneBox';
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.backgroundPosition = "30% 10%"
+
+      tempDiv.innerHTML += "<p class='detail-section-header'; padding: 5px;'>" + fighterOneName + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+
+      detailsDiv.appendChild(tempDiv);
     });
+
+    detailsDiv.innerHTML += "<span class='against-sign-fight'>VS.</span>"
 
     fighterTwoSup.get().then(function(doc){
       var fighterTwoName = doc.data().imie + " " + doc.data().nazwisko;
-      detailsDiv.innerHTML += "<p class='detail-section-header' style='float: right; padding: 5px;'>" + fighterTwoName + "</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: right;'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: right;'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: right;'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
-      detailsDiv.innerHTML += "<p class='detail-section-text' style='float: right;'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+      var tempDiv = document.createElement('div');
+
+      tempDiv.className = 'fighterTwoBox';
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.backgroundPosition = "30% 10%"
+
+      tempDiv.innerHTML += "<p class='detail-section-header'; padding: 5px;'>" + fighterTwoName + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+
+      detailsDiv.appendChild(tempDiv);
     });
 
-    // detailsDiv.innerHTML += "<img class='thumbnail' src='/img/fighters/" + fighterOne + ".png' />";
-    // detailsDiv.innerHTML += "<img class='thumbnail' src='/img/fighters/" + fighterTwo + ".png' />";
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Data walki: </span>" + dataSup.data + "</p>";
-    // detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Opis: </span>" + dataSup.opis + "</p>";
+    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Zwycięzca: </span>" + dataSup.zwyciezca + "</p>";
+    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Sposób wygranej: </span>" + dataSup.sposob + "</p>"
+    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Opis: </span>" + dataSup.opis + "</p>";
 
     fightsOutput.innerHTML = "";
     fightsOutput.appendChild(detailsDiv);

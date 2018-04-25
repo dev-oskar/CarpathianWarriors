@@ -151,6 +151,7 @@ a:focus, a:hover {
 .detail-section {
   background-color: rgb(30, 30, 30);
   padding: 25px;
+  height: 100vh;
 }
 
 .detail-section-header {
@@ -232,6 +233,14 @@ a:focus, a:hover {
   display: block;
   color: red;
 }
+.against-sign-fight {
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: block;
+  color: white;
+}
 
 .fighter-one {
   position: absolute;
@@ -260,6 +269,23 @@ a:focus, a:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.fighterOneBox{
+  float: left;
+  display: block;
+  background: rgb(34, 34, 34);
+  padding: 20px 50px;
+  width: 30%;
+  height: 45%;
+}
+
+.fighterTwoBox{
+  float: right;
+  display: block;
+  background: rgb(34, 34, 34);
+  padding: 20px 50px;
+  width: 30%;
+}
+
 @media (max-width: 768px) {
   .fighter-box {
     width: 100%;
@@ -286,6 +312,10 @@ a:focus, a:hover {
     font-size: 0.6em;
     top: 40%;
   }
+  .against-sign-fight{
+    font-size: 1.6em;
+    top: 67%;
+  }
   .fighter-one, .fighter-two {
     font-size: 0.8em;
   }
@@ -293,6 +323,18 @@ a:focus, a:hover {
     background-color: rgba(255, 0, 0, 0.9);
     color: white;
   }
+  .fighterOneBox{
+    padding: 30px;
+    width: 100%;
+    border-bottom: 30px solid #1e1e1e;
+  }
+  .fighterTwoBox{
+    padding: 30px;
+    width: 100%;
+  }
+}
+.list-inline-item:not(:last-child) {
+    margin-right: 0;
 }
 
 @media (min-width: 992px) {
