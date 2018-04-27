@@ -169,6 +169,11 @@ a:focus, a:hover {
   line-height: 0.1;
 }
 
+.partners{
+  line-height: normal;
+  text-align: justify;
+}
+
 .detail-section-node {
   font-family: 'Cabin', sans-serif;
   font-weight: bold;
@@ -275,7 +280,6 @@ a:focus, a:hover {
   background: rgb(34, 34, 34);
   padding: 20px 50px;
   width: 30%;
-  height: 45%;
 }
 
 .fighterTwoBox{

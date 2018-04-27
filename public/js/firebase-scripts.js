@@ -12,7 +12,8 @@ var firestore = firebase.firestore();
 
 const output = document.getElementById('fightersList');
 const clubOutput = document.getElementById('clubsList');
-var fightsOutput = document.getElementById('fights');
+const fightsOutput = document.getElementById('fights');
+const partnersOutput = document.getElementById('partnersList');
 var tempDiv;
 var detailsDiv;
 
@@ -72,7 +73,24 @@ getRealtimeUpdates = function() {
 
       fightsOutput.appendChild(tempDiv);
     })
-  })
+  });
+  firestore.collection('partnerzy').get().then(function(querySnapshot) {
+    partnersOutput.innerHTML = "";
+
+    querySnapshot.forEach(function(doc){
+      var dataSup = doc.data();
+
+      tempDiv = document.createElement('div');
+      tempDiv.className = "club-box";
+      tempDiv.setAttribute("onclick", "getPartnerDetails(this)");
+      tempDiv.dataset.partnerId = doc.id;
+      tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/partners/" + doc.id + ".png')";
+      tempDiv.style.backgroundPosition = "cover";
+
+      partnersOutput.appendChild(tempDiv);
+    })
+  });
 }
 
 getRealtimeUpdates();
@@ -147,6 +165,25 @@ function getClubDetails(clubId) {
     clubOutput.innerHTML = "";
     clubOutput.appendChild(detailsDiv);
     document.getElementById('clubs-list').scrollIntoView();
+  })
+};
+
+function getPartnerDetails(partnerId) {
+  var selectedPartner = partnerId.getAttribute('data-partner-id');
+
+  var docRef = firestore.collection('partnerzy').doc(selectedPartner);
+  docRef.get().then(function(doc) {
+    var dataSup = doc.data();
+
+    detailsDiv = document.createElement('div');
+    detailsDiv.className = 'detail-section';
+    detailsDiv.innerHTML += "<span class='close-details' onclick='getRealtimeUpdates()'>X</span</p><br />";
+    detailsDiv.innerHTML += "<p class='detail-section-header'>" + dataSup.nazwa + "</p>";
+    detailsDiv.innerHTML += "<p class='detail-section-text partners'><span class='detail-section-node'>Link: </span>" + "<a href='" + dataSup.link + "' target='" + "_blank" + "'>Kliknij tutaj</a></p>";
+    detailsDiv.innerHTML += "<p class='detail-section-text partners'>" + dataSup.opis + "</p>";
+
+    partnersOutput.innerHTML = "";
+    partnersOutput.appendChild(detailsDiv);
   })
 };
 
