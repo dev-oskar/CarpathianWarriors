@@ -218,10 +218,10 @@ function getFightDetails(fightId) {
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
 
+      detailsDiv.innerHTML += "<p class='against-sign-fight'>VS.</p>"
       detailsDiv.appendChild(tempDiv);
     });
 
-    detailsDiv.innerHTML += "<span class='against-sign-fight'>VS.</span>"
 
     fighterTwoSup.get().then(function(doc){
       var fighterTwoName = doc.data().imie + " " + doc.data().nazwisko;
