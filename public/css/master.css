@@ -323,10 +323,6 @@ a:focus, a:hover {
   .fighter-one, .fighter-two {
     font-size: 0.8em;
   }
-  .old-gala {
-    background-color: rgba(255, 0, 0, 0.9);
-    color: white;
-  }
   .fighterOneBox{
     padding: 30px;
     width: 100%;
@@ -460,17 +456,42 @@ a:focus, a:hover {
   background-color: rgb(34, 34, 34);
 }
 
-.old-gala {
-  margin-top: 5px;
-  color: black;
-  font-family: 'Cabin', sans-serif;
-  font-size: 1.2em;
-  background-color: rgba(255, 0, 0, 0.6);
+.old-galas{
+  height: 400px;
+  box-sizing: border-box;
 }
 
-.old-gala:hover {
+.old-gala-header {
+  padding: 5px 15px;
+  font-family: 'Cabin', sans-serif;
+  font-size: 26px;
+  clear: both;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.old-gala {
+  box-sizing: border-box;
+  float: left;
+  height: 100%;
+  width: 33%;
+  padding: 25px;
+  margin: 1px;
   color: white;
-  background-color: rgba(255, 0, 0, 0.9);
+  font-family: 'Cabin', sans-serif;
+  font-size: 1.2em;
+}
+
+.old-gala:hover{
+  margin: 0;
+  border: white 1px solid;
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+@media (max-width: 768px){
+  .old-gala{ 
+    width: 100%;
+    background-position: center;
+  }
 }
 
 .download-section {
