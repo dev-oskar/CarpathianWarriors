@@ -57,7 +57,7 @@ getRealtimeUpdates = function() {
       clubOutput.appendChild(tempDiv);
     });
   });
-  firestore.collection('walki').get().then(function(querySnapshot) {
+  firestore.collection('walki').orderBy("rodzajwalki").get().then(function(querySnapshot) {
     fightsOutput.innerHTML = "";
 
     querySnapshot.forEach(function(doc){
@@ -240,6 +240,7 @@ function getFightDetails(fightId) {
       detailsDiv.appendChild(tempDiv);
     });
 
+    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='color: red;'>" + dataSup.rodzajwalki + "</span>"
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Data walki: </span>" + dataSup.data + "</p>";
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Zwycięzca: </span>" + dataSup.zwyciezca + "</p>";
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Sposób wygranej: </span>" + dataSup.sposob + "</p>"
