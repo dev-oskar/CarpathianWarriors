@@ -212,11 +212,11 @@ function getFightDetails(fightId) {
       tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
 
-      tempDiv.innerHTML += "<p class='detail-section-header'; padding: 5px;'>" + fighterOneName + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-header' style='line-height: normal;'>" + fighterOneName + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
-      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='line-height: normal;'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
 
       detailsDiv.innerHTML += "<p class='against-sign-fight'>VS.</p>"
       detailsDiv.appendChild(tempDiv);
@@ -231,11 +231,11 @@ function getFightDetails(fightId) {
       tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
 
-      tempDiv.innerHTML += "<p class='detail-section-header'; padding: 5px;'>" + fighterTwoName + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-header' style='line-height: normal;'>" + fighterTwoName + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
-      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='line-height: normal;'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
 
       detailsDiv.appendChild(tempDiv);
     });
