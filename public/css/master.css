@@ -447,6 +447,10 @@ a:focus, a:hover {
   /* height: 100vh; TODO: Set 100vh for specific screens. For example, it looks good at first section, but not in contact.*/
 }
 
+#regulations ol li{
+  font-size: 120%;
+}
+
 .gala-date {
   text-align: left;
   line-height: 0.1
