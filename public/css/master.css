@@ -401,8 +401,12 @@ a:focus, a:hover {
 }
 
 .masthead .intro-body .intro-text {
-  font-size: 18px;
-  text-align: left;
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.masthead .intro-body .intro-text::first-letter {
+  font-size: 1.6em;
 }
 
 @media (min-width: 768px) {
@@ -414,8 +418,8 @@ a:focus, a:hover {
     font-size: 60px;
   }
   .masthead .intro-body .intro-text {
-    font-size: 18px;
-    width: 60%;
+    font-size: 1.4em;
+    /* width: 60%; */
   }
 }
 
