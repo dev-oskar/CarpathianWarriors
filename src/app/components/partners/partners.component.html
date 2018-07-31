@@ -1,0 +1,15 @@
+<div class="main">
+    <div id="landing">
+      <div class="content">
+        <h1 style="text-align: center;">PARTNERZY</h1>
+        <ul id="partners">
+            <li *ngFor="let item of items | async">
+              <div>
+                <p>{{item.nazwa}}</p> 
+                <p>{{item.opis}}</p>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+</div>
