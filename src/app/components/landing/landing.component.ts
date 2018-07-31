@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-landing',
@@ -23,8 +24,11 @@ export class LandingComponent implements OnInit {
   }
 
   ngOnInit() {
-    
   };
 
   title = 'Carpathian Warriors';
+
+  scrollToElement($element): void {
+    $element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
+  }
 }
