@@ -1,9 +1,13 @@
-<app-header></app-header>
-<router-outlet></router-outlet>
-<!-- <ul>
-  <li class="text" *ngFor="let item of items | async">
-    {{item.imie}} {{item.nazwisko}}
-  </li>
-</ul> -->
-<app-footer></app-footer>
+<div class="main-box">
+  <h1>{{title | uppercase}}</h1>
 
+  <div class="grid-container">
+    <div class="navigation-box">
+      <app-nav-menu></app-nav-menu>
+    </div>
+
+    <div class="content-box">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

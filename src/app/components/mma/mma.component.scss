@@ -1,0 +1,39 @@
+h1 {
+    text-align: center;
+}
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+    height: 78%;
+    & a {
+        text-decoration: none;
+        text-align: center;
+        display: inline;
+        color: red;
+        margin: 0 10px;
+        font-weight: 700;
+        & p {
+            background-color: rgba(0,0,0,0.7);
+            padding: 5px 0;
+        }
+        & :hover{
+            background: rgba(0,0,0,0.5);
+            font-size: 1.2em;
+            color: white;
+        }
+    }
+}
+#fighters{
+    background: url('../../../assets/images/background-2.jpg');
+    background-position: center;
+}
+#clubs{
+    background: url('../../../assets/images/logo.jpg');
+    background-position: center;
+}
+.mma-box{
+    border: 1px solid red;
+    border-radius: 5px;
+    height: 100%;
+}

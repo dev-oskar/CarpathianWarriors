@@ -1,25 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { PartnersComponent } from './components/partners/partners.component';
-
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './/app-routing.module';
-import { LandingComponent } from './components/landing/landing.component';
+
+// Components 
+import { AppComponent } from './app.component';
+import { NavMenuComponent } from './components/nav-menu/nav-menu.component';
+import { NewsComponent } from './components/news/news.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { MmaComponent } from './components/mma/mma.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { FightersComponent } from './components/mma/parts/fighters/fighters.component';
+import { ClubsComponent } from './components/mma/parts/clubs/clubs.component';
+import { FightsComponent } from './components/mma/parts/fights/fights.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    FooterComponent,
-    PartnersComponent,
-    LandingComponent,
+    NavMenuComponent,
+    NewsComponent,
+    AboutusComponent,
+    MmaComponent,
+    ContactComponent,
+    FightersComponent,
+    ClubsComponent,
+    FightsComponent
   ],
   imports: [
     BrowserModule,

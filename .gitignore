@@ -37,9 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-
-# Firebase 
+/.vscode
+/node_modules
 /functions
-
-# Owl Carousel
-/src/assets
+/e2e

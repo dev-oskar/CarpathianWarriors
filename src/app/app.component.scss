@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+.grid-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    grid-column-gap: 30px;
+}
+.navigation-box {
+    border-radius: 5px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid red;
+    height: 80vh;
+}
+.content-box {
+    border-radius: 5px;
+    background: rgba(0,0,0,0.6);
+    border: 1px solid red;
+    height: 80vh;
+}

@@ -10,7 +10,7 @@
     ]
   },
   "hosting": {
-    "public": "dist/carpathianAngular",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
