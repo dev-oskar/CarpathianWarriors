@@ -1,3 +1,5 @@
+import { HttpClientModule } from '@angular/common/http'; 
+import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -30,10 +32,12 @@ import { FightsComponent } from './components/mma/parts/fights/fights.component'
     FightsComponent
   ],
   imports: [
+    HttpClientModule,
+    HttpModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

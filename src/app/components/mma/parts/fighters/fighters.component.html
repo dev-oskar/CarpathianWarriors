@@ -1,3 +1,7 @@
-<p>
-  fighters works!
-</p>
+<p>Lista zawodników</p>
+<div class="main">
+  <div class="fighter-box" *ngFor="let fighter of fighters | async">
+    <p>{{fighter.imie}}</p>
+    <p>{{fighter.nazwisko}}</p>
+  </div> 
+</div>

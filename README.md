@@ -7,6 +7,6 @@ For this day (16.09.2018) there's still much to do.
 # TODO:
 * missing pages 
 * contact email system implementation
-* firebase integration
+* ~~firebase integration~~
 * responsiveness
 * cross-browser compatibility
