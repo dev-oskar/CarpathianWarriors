@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+.main{
+    & div{
+        margin: 15px auto;
+        text-align: center;
+    }
+    & input,textarea{
+        padding: 5px 10px;
+        background: transparent;
+        border: none;
+        border-bottom: 1px solid red;
+        color: white;
+        font-family: inherit;
+    }
+}

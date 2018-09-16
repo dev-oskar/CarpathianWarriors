@@ -9,7 +9,10 @@ export class ContactComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  title = "Kontakt"
 
+  ngOnInit() {
+    
+  }
+  
 }
