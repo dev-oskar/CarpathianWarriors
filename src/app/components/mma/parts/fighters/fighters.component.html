@@ -1,9 +1,9 @@
-<p><span class="button-back">Wstecz</span>Lista zawodników</p>
+<p><span class="button-back" routerLink="/mma">Wstecz</span>Lista zawodników</p>
 <div class="main">
-  <div class="fighters-box" *ngFor="let fighter of fighters | async" (click)="showDetails(fighter)">
+  <div class="fighters-box" *ngFor="let fighter of fighters | async" [routerLink]="['/mma/zawodnicy/', getId(fighter.imie, fighter.nazwisko)]">
     <p>{{fighter.imie}} {{fighter.nazwisko}}</p>
   </div>
-
+<!-- fighter.imie.toLowerCase() + '-' + fighter.nazwisko.toLowerCase() -->
 </div>
 
 <!-- <div>

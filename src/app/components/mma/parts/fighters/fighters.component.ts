@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore'
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router} from '@angular/router'
-// import { DetailsComponent } from './details/details.component'
-
 
 @Component({
   selector: 'app-fighters',
@@ -15,14 +13,28 @@ export class FightersComponent implements OnInit {
   fighters: Observable<any[]>;
   // fighterDetails: DetailsComponent;
 
+  name: string;
+
+  getId(name, lastname){
+    debugger;
+    let idWithoutPolishSigns = name.toLowerCase() + "-" + lastname.toLowerCase();
+
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ś/g,'s');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ą/g,'a');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ł/g,'l');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ę/g,'e');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ż/g,'z');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ż/g,'z');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ó/g,'o');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ć/g,'c');
+    idWithoutPolishSigns = idWithoutPolishSigns.replace(/ń/g,'n');
+
+    return idWithoutPolishSigns;
+  }  
+
   constructor(db: AngularFirestore, private _activatedRoute: ActivatedRoute, private _router: Router) {
     this.fighters = db.collection('zawodnicy').valueChanges();
   }
-
-  // showDetails(details:FighterDetails): void{
-    
-  //    this.fighterDetails = details;
-  // }
 
   ngOnInit() {
 

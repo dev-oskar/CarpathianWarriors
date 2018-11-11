@@ -1,7 +1,8 @@
-<div *ngIf="fighter-box" class="fighter">
+<p><span class="button-back" routerLink="/mma/zawodnicy">Wstecz</span></p>
+<div *ngIf="fighters" class="fighter-box">
   <div id="fighter">
     <h1>{{fighter.imie | uppercase}}</h1> 
     <h1>{{fighter.nazwisko | uppercase}}</h1> 
   </div>
 </div>
-<p>I'm here!</p>
+<p>I'm here! {{ id }}</p>

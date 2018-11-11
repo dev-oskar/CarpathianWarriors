@@ -1,20 +1,29 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FightersComponent } from '../fighters.component';
+import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore'
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router'; 
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['../fighters.component.scss']
 })
-export class DetailsComponent implements OnInit {
+export class FighterDetailsComponent implements OnInit {
   
-  // @Input() fighter: DetailsComponent;
+  fighter: Observable<any[]>;
+  id: string;
+  private sub: any;
+  private itemDoc: AngularFirestoreDocument;
 
-  constructor() { 
-
+  constructor(db: AngularFirestore, private afs: AngularFirestore, private route: ActivatedRoute) {
+    this.fighter = db.collection('zawodnicy').valueChanges();
   }
   
-  ngOnInit() {
+  ngOnInit() { 
+    // Get id parameter from routing
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['id'];
+    });
   }
 
 }

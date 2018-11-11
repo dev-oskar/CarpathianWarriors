@@ -14,3 +14,10 @@
         width: 50%;
     }
 }
+p{
+    text-align: center;
+
+    &:first-of-type{
+        height: 1.8em;
+    }
+}
