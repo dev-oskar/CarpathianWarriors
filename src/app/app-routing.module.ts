@@ -10,6 +10,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FightersComponent } from './components/mma/parts/fighters/fighters.component';
 import { FightsComponent } from './components/mma/parts/fights/fights.component';
 import { ClubsComponent } from './components/mma/parts/clubs/clubs.component';
+import { DetailsComponent } from './components/mma/parts/fighters/details/details.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,10 @@ const routes: Routes = [
   {
     path: 'mma/zawodnicy', 
     component: FightersComponent
+  },
+  {
+    path: 'mma/zawodnicy/:id',
+    component: DetailsComponent
   },
   {
     path: 'mma/walki', 

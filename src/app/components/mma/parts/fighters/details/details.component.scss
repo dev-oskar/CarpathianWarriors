@@ -1,0 +1,16 @@
+.fighter-box{
+    background: transparent;
+    height: 100%;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
+    & #fighter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: green;
+        width: 50%;
+    }
+}

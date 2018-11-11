@@ -1,7 +1,11 @@
-<p>Lista zawodników</p>
+<p><span class="button-back">Wstecz</span>Lista zawodników</p>
 <div class="main">
-  <div class="fighter-box" *ngFor="let fighter of fighters | async">
-    <p>{{fighter.imie}}</p>
-    <p>{{fighter.nazwisko}}</p>
-  </div> 
+  <div class="fighters-box" *ngFor="let fighter of fighters | async" (click)="showDetails(fighter)">
+    <p>{{fighter.imie}} {{fighter.nazwisko}}</p>
+  </div>
+
 </div>
+
+<!-- <div>
+    <app-details [fighter]="fighterDetails"></app-details>
+</div> -->

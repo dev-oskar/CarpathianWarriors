@@ -17,7 +17,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { FightersComponent } from './components/mma/parts/fighters/fighters.component';
 import { ClubsComponent } from './components/mma/parts/clubs/clubs.component';
 import { FightsComponent } from './components/mma/parts/fights/fights.component';
-
+import { DetailsComponent } from './components/mma/parts/fighters/details/details.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +28,7 @@ import { FightsComponent } from './components/mma/parts/fights/fights.component'
     MmaComponent,
     ContactComponent,
     FightersComponent,
+    DetailsComponent,
     ClubsComponent,
     FightsComponent
   ],
