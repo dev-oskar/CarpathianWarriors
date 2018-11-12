@@ -10,20 +10,22 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FighterDetailsComponent implements OnInit {
   
-  fighter: Observable<any[]>;
+  fighter: {};
   id: string;
   private sub: any;
   private itemDoc: AngularFirestoreDocument;
 
   constructor(db: AngularFirestore, private afs: AngularFirestore, private route: ActivatedRoute) {
-    this.fighter = db.collection('zawodnicy').valueChanges();
-  }
-  
-  ngOnInit() { 
     // Get id parameter from routing
     this.sub = this.route.params.subscribe(params => {
       this.id = params['id'];
     });
+
+    this.fighter = db.doc("zawodnicy/" + this.id).valueChanges();
+  }
+  
+  ngOnInit() { 
+
   }
 
 }
