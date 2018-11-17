@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from 'angularfire2/firestore'
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Router} from '@angular/router'
+import { FighterDetailsComponent } from './details/details.component'
 
 @Component({
   selector: 'app-fighters',
@@ -11,14 +12,14 @@ import { ActivatedRoute, Router} from '@angular/router'
 export class FightersComponent implements OnInit {
 
   fighters: Observable<any[]>;
-  // fighterDetails: DetailsComponent;
+  fighterDetails: FighterDetailsComponent;
 
   name: string;
 
+  // Get rid of polish signs and set id
   getId(name, lastname){
-    debugger;
     let idWithoutPolishSigns = name.toLowerCase() + "-" + lastname.toLowerCase();
-
+    
     idWithoutPolishSigns = idWithoutPolishSigns.replace(/ś/g,'s');
     idWithoutPolishSigns = idWithoutPolishSigns.replace(/ą/g,'a');
     idWithoutPolishSigns = idWithoutPolishSigns.replace(/ł/g,'l');

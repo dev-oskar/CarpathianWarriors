@@ -3,8 +3,8 @@
   <div class="fighters-box" *ngFor="let fighter of fighters | async" [routerLink]="['/mma/zawodnicy/', getId(fighter.imie, fighter.nazwisko)]">
     <p>{{fighter.imie}} {{fighter.nazwisko}}</p>
   </div>
-<!-- fighter.imie.toLowerCase() + '-' + fighter.nazwisko.toLowerCase() -->
 </div>
+
 
 <!-- <div>
     <app-details [fighter]="fighterDetails"></app-details>

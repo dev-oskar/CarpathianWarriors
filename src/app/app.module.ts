@@ -37,7 +37,7 @@ import { FighterDetailsComponent } from './components/mma/parts/fighters/details
     HttpModule,
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
+    AngularFirestoreModule.enablePersistence(),
     AppRoutingModule
   ],
   providers: [],
