@@ -1,0 +1,177 @@
+[debug] [2018-11-20T18:38:47.587Z] ----------------------------------------------------------------------
+[debug] [2018-11-20T18:38:47.589Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-20T18:38:47.589Z] CLI Version:   6.1.0
+[debug] [2018-11-20T18:38:47.589Z] Platform:      win32
+[debug] [2018-11-20T18:38:47.589Z] Node Version:  v10.11.0
+[debug] [2018-11-20T18:38:47.592Z] Time:          Tue Nov 20 2018 19:38:47 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-20T18:38:47.592Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-20T18:38:47.614Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-20T18:38:47.615Z] > authorizing via signed-in user
+[debug] [2018-11-20T18:38:47.615Z] [iam] checking project carpathianwarriorsmma for permissions ["firebase.projects.get"]
+[debug] [2018-11-20T18:38:47.617Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-20T18:38:47.617Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-20T18:38:47.870Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-20T18:38:47.886Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma:testIamPermissions  
+
+[debug] [2018-11-20T18:38:48.887Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-20T18:38:48.891Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma  
+ 
+[debug] [2018-11-20T18:38:49.810Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'Q:\Projects\CarpathianWarriors'...
+[info] 
+[debug] [2018-11-20T18:38:49.836Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at assertPath (path.js:39:11)
+    at Object.join (path.js:432:7)
+    at FunctionsEmulator.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\functionsEmulator.js:88:29)
+    at Object.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\functions.js:7:33)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:15:23
+    at arrayMap (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:639:23)
+    at Function.map (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9556:14)
+    at _serve (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:13:26)
+    at Command.module.exports.Command.description.option.option.option.option.before.action [as _action] (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\serve.js:53:12)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:158:37
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-11-20T20:18:12.397Z] ----------------------------------------------------------------------
+[debug] [2018-11-20T20:18:12.399Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-20T20:18:12.399Z] CLI Version:   6.1.0
+[debug] [2018-11-20T20:18:12.400Z] Platform:      win32
+[debug] [2018-11-20T20:18:12.400Z] Node Version:  v10.11.0
+[debug] [2018-11-20T20:18:12.400Z] Time:          Tue Nov 20 2018 21:18:12 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-20T20:18:12.400Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-20T20:18:12.416Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-20T20:18:12.417Z] > authorizing via signed-in user
+[debug] [2018-11-20T20:18:12.417Z] [iam] checking project carpathianwarriorsmma for permissions ["firebase.projects.get"]
+[debug] [2018-11-20T20:18:12.419Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-20T20:18:12.419Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-20T20:18:12.710Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-20T20:18:12.724Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma:testIamPermissions  
+
+[debug] [2018-11-20T20:18:13.697Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-20T20:18:13.700Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma  
+ 
+[debug] [2018-11-20T20:18:14.618Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'Q:\Projects\CarpathianWarriors'...
+[info] 
+[debug] [2018-11-20T20:18:14.634Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at assertPath (path.js:39:11)
+    at Object.join (path.js:432:7)
+    at FunctionsEmulator.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\functionsEmulator.js:88:29)
+    at Object.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\functions.js:7:33)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:15:23
+    at arrayMap (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:639:23)
+    at Function.map (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9556:14)
+    at _serve (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:13:26)
+    at Command.module.exports.Command.description.option.option.option.option.before.action [as _action] (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\serve.js:53:12)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:158:37
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-11-22T17:29:35.019Z] ----------------------------------------------------------------------
+[debug] [2018-11-22T17:29:35.039Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve
+[debug] [2018-11-22T17:29:35.039Z] CLI Version:   6.1.0
+[debug] [2018-11-22T17:29:35.039Z] Platform:      win32
+[debug] [2018-11-22T17:29:35.039Z] Node Version:  v10.11.0
+[debug] [2018-11-22T17:29:35.050Z] Time:          Thu Nov 22 2018 18:29:35 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-22T17:29:35.050Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-22T17:29:35.098Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-22T17:29:35.118Z] > authorizing via signed-in user
+[debug] [2018-11-22T17:29:35.119Z] [iam] checking project carpathianwarriorsmma for permissions ["firebase.projects.get"]
+[debug] [2018-11-22T17:29:35.126Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-22T17:29:35.127Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-22T17:29:35.400Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-22T17:29:35.406Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma:testIamPermissions  
+
+[debug] [2018-11-22T17:29:36.415Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-22T17:29:36.416Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma  
+ 
+[debug] [2018-11-22T17:29:37.342Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'Q:\Projects\CarpathianWarriors'...
+[info] 
+[debug] [2018-11-22T17:29:37.375Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at assertPath (path.js:39:11)
+    at Object.join (path.js:432:7)
+    at FunctionsEmulator.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\functionsEmulator.js:88:29)
+    at Object.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\functions.js:7:33)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:15:23
+    at arrayMap (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:639:23)
+    at Function.map (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9556:14)
+    at _serve (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:13:26)
+    at Command.module.exports.Command.description.option.option.option.option.before.action [as _action] (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\serve.js:53:12)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:158:37
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-11-22T17:30:16.641Z] ----------------------------------------------------------------------
+[debug] [2018-11-22T17:30:16.675Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --debug
+[debug] [2018-11-22T17:30:16.676Z] CLI Version:   6.1.0
+[debug] [2018-11-22T17:30:16.677Z] Platform:      win32
+[debug] [2018-11-22T17:30:16.677Z] Node Version:  v10.11.0
+[debug] [2018-11-22T17:30:16.678Z] Time:          Thu Nov 22 2018 18:30:16 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-22T17:30:16.679Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-22T17:30:16.715Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-22T17:30:16.727Z] > authorizing via signed-in user
+[debug] [2018-11-22T17:30:16.737Z] [iam] checking project carpathianwarriorsmma for permissions ["firebase.projects.get"]
+[debug] [2018-11-22T17:30:16.759Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma:testIamPermissions  
+
+[debug] [2018-11-22T17:30:17.790Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-22T17:30:17.794Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma  
+ 
+[debug] [2018-11-22T17:30:18.716Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'Q:\Projects\CarpathianWarriors'...
+[info] 
+[debug] [2018-11-22T17:30:18.737Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at assertPath (path.js:39:11)
+    at Object.join (path.js:432:7)
+    at FunctionsEmulator.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\functionsEmulator.js:88:29)
+    at Object.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\functions.js:7:33)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:15:23
+    at arrayMap (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:639:23)
+    at Function.map (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9556:14)
+    at _serve (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:13:26)
+    at Command.module.exports.Command.description.option.option.option.option.before.action [as _action] (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\serve.js:53:12)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:158:37
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2018-11-22T17:31:10.173Z] ----------------------------------------------------------------------
+[debug] [2018-11-22T17:31:10.189Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js serve --debug
+[debug] [2018-11-22T17:31:10.190Z] CLI Version:   6.1.1
+[debug] [2018-11-22T17:31:10.190Z] Platform:      win32
+[debug] [2018-11-22T17:31:10.190Z] Node Version:  v10.11.0
+[debug] [2018-11-22T17:31:10.192Z] Time:          Thu Nov 22 2018 18:31:10 GMT+0100 (Central European Standard Time)
+[debug] [2018-11-22T17:31:10.192Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-22T17:31:10.223Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-22T17:31:10.229Z] > authorizing via signed-in user
+[debug] [2018-11-22T17:31:10.236Z] [iam] checking project carpathianwarriorsmma for permissions ["firebase.projects.get"]
+[debug] [2018-11-22T17:31:10.274Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma:testIamPermissions  
+
+[debug] [2018-11-22T17:31:11.288Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-22T17:31:11.290Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/carpathianwarriorsmma  
+ 
+[debug] [2018-11-22T17:31:12.215Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'Q:\Projects\CarpathianWarriors'...
+[info] 
+[debug] [2018-11-22T17:31:12.237Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received type undefined
+    at assertPath (path.js:39:11)
+    at Object.join (path.js:432:7)
+    at FunctionsEmulator.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\functionsEmulator.js:88:29)
+    at Object.start (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\functions.js:7:33)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:15:23
+    at arrayMap (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:639:23)
+    at Function.map (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\lodash\lodash.js:9556:14)
+    at _serve (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\serve\index.js:13:26)
+    at Command.module.exports.Command.description.option.option.option.option.before.action [as _action] (C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\commands\serve.js:55:12)
+    at C:\Users\Velho\AppData\Roaming\npm\node_modules\firebase-tools\lib\command.js:158:37
+[error] 
+[error] Error: An unexpected error has occurred.
