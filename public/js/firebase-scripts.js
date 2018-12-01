@@ -8,7 +8,7 @@ var config = {
   messagingSenderId: "24911101713"
 };
 firebase.initializeApp(config);
-var firestore = firebase.firestore().enablePersistence();
+var firestore = firebase.firestore();
 
 const output = document.getElementById('fightersList');
 const clubOutput = document.getElementById('clubsList');
@@ -35,7 +35,7 @@ getRealtimeUpdates = function() {
       tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
       tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>"
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
       output.appendChild(tempDiv);
     });
@@ -52,7 +52,7 @@ getRealtimeUpdates = function() {
       tempDiv.setAttribute("onclick", "getClubDetails(this)");
       tempDiv.dataset.clubId = doc.id;
       tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/clubs/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/kluby/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "center";
 
       clubOutput.appendChild(tempDiv);
@@ -86,7 +86,7 @@ getRealtimeUpdates = function() {
       tempDiv.setAttribute("onclick", "getPartnerDetails(this)");
       tempDiv.dataset.partnerId = doc.id;
       tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/partners/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/partnerzy/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "cover";
 
       partnersOutput.appendChild(tempDiv);
@@ -116,7 +116,7 @@ function sortBy(type) {
       tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
       tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>";
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
       output.appendChild(tempDiv);
     });
@@ -140,7 +140,7 @@ function getFighterDetails(fighterId) {
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + dataSup.wiek + "</p>";
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Klub: </span>" + dataSup.przynaleznosc + "</p>";
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Opis: </span>" + dataSup.opis + "</p>";
-    detailsDiv.innerHTML += "<img class='detail-section-avatar'" + "src='/img/fighters/" + doc.id + ".png'" + "alt='Zdjęcie zawodnika' />";
+    detailsDiv.innerHTML += "<img class='detail-section-avatar'" + "src='/img/zawodnicy/" + doc.id + ".png'" + "alt='Zdjęcie zawodnika' />";
 
     output.innerHTML = "";
     output.appendChild(detailsDiv);
@@ -189,62 +189,67 @@ function getPartnerDetails(partnerId) {
 };
 
 function getFightDetails(fightId) {
+  // Wybrana walka
   var selectedFight = fightId.getAttribute('data-fight-id');
 
+  // Odniesienie do kolekcji firestore walki
   var docRef = firestore.collection('walki').doc(selectedFight);
   docRef.get().then(function(doc){
+    // Inicijalizacja zmiennych
     var dataSup = doc.data();
+    // format id = "imie-nazwisko"
     var fighterOne = dataSup.uczestnicy.zawodnik1id;
     var fighterTwo = dataSup.uczestnicy.zawodnik2id;
-
+    // Odniesienie do firestore
     var fighterOneSup = firestore.collection('zawodnicy').doc(fighterOne);
     var fighterTwoSup = firestore.collection('zawodnicy').doc(fighterTwo);
 
-
+    // Wyswietlenie div'a z zawodnikiem oraz dodaj portrzebne metody
     detailsDiv = document.createElement('div');
     detailsDiv.className = 'detail-section';
     detailsDiv.innerHTML += "<span class='close-details' onclick='getRealtimeUpdates()'>X</span</p><br />";
 
+    // Odniesienie do pierwszego zawodnika
     fighterOneSup.get().then(function(doc){
+      //  Inicjalizacja zmiennych
       var fighterOneName = doc.data().imie + " " + doc.data().nazwisko;
       var tempDiv = document.createElement('div');
-
+      // CSS 
       tempDiv.className = 'fighterOneBox';
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
-
+      // Wyswietlenie podstawowych informacji o zawodniku
       tempDiv.innerHTML += "<p class='detail-section-header' style='line-height: normal;'>" + fighterOneName + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='line-height: normal;'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
-
+      // Dodanie zawodnika (child) do okna (parent) 
       detailsDiv.innerHTML += "<p class='against-sign-fight'>VS.</p>"
       detailsDiv.appendChild(tempDiv);
     });
 
-
+    // Odniesienie do drugiego zawodnika
     fighterTwoSup.get().then(function(doc){
+      //  Inicjalizacja zmiennych
       var fighterTwoName = doc.data().imie + " " + doc.data().nazwisko;
       var tempDiv = document.createElement('div');
-
+      // CSS
       tempDiv.className = 'fighterTwoBox';
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/fighters/" + doc.id + ".png')";
+      tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
       tempDiv.style.backgroundPosition = "30% 10%"
-
+      // Wyswietlenie podstawowych informacji o zawodniku
       tempDiv.innerHTML += "<p class='detail-section-header' style='line-height: normal;'>" + fighterTwoName + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='line-height: normal;'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
-
+      // Dodanie zawodnika (child) do okna (parent) 
       detailsDiv.appendChild(tempDiv);
     });
 
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='color: red;'>" + dataSup.rodzajwalki + "</span>"
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Data walki: </span>" + dataSup.data + "</p>";
-    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Zwycięzca: </span>" + dataSup.zwyciezca + "</p>";
-    detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Sposób wygranej: </span>" + dataSup.sposob + "</p>"
     detailsDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Opis: </span>" + dataSup.opis + "</p>";
 
     fightsOutput.innerHTML = "";
