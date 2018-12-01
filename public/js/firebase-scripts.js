@@ -10,94 +10,109 @@ var config = {
 firebase.initializeApp(config);
 var firestore = firebase.firestore();
 
-const output = document.getElementById('fightersList');
-const clubOutput = document.getElementById('clubsList');
-const fightsOutput = document.getElementById('fights');
+const output         = document.getElementById('fightersList');
+const clubOutput     = document.getElementById('clubsList');
+const fightsOutput   = document.getElementById('fights');
 const partnersOutput = document.getElementById('partnersList');
 var tempDiv;
 var detailsDiv;
 
 getRealtimeUpdates = function() {
 
-  firestore.collection('zawodnicy').get().then(function(querySnapshot) {
-    output.innerHTML = "";
+  // Inicjalizacja stron w celu mozliwosci sprawdzenia ktora strona jest zaladowana
+  var fightersPage = document.getElementById("fightersList");
+  var clubsPage    = document.getElementById("clubsList");
+  var fightsPage   = document.getElementById("fights");
+  var partnersPage = document.getElementById("partnersList");
 
-    querySnapshot.forEach(function(doc) {
-      // doc.data() is never undefined for query doc snapshots
-      var dataSup = doc.data();
-
-      tempDiv = document.createElement('div');
-      tempDiv.className = "fighter-box";
-      tempDiv.setAttribute("onclick", "getFighterDetails(this)");
-      tempDiv.dataset.fighterId = doc.id;
-      tempDiv.innerHTML += "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
-      tempDiv.innerHTML += "<p class='fighter-props'>Waga: " + dataSup.waga + " kg</p>";
-      tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
-      tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
-      tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>"
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
-      tempDiv.style.backgroundPosition = "30% 10%"
-      output.appendChild(tempDiv);
+  if(fightersPage != null){
+    firestore.collection('zawodnicy').get().then(function(querySnapshot) {
+      output.innerHTML = "";
+      querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+        var dataSup = doc.data();
+  
+        tempDiv = document.createElement('div');
+        tempDiv.className = "fighter-box";
+        tempDiv.setAttribute("onclick", "getFighterDetails(this)");
+        tempDiv.dataset.fighterId = doc.id;
+        tempDiv.innerHTML += "<p class='fighter-props-identity'>" + dataSup.imie + " " + dataSup.nazwisko + "</p>";
+        // tempDiv.innerHTML += "<p class='fighter-props'>Waga: " + dataSup.waga + " kg</p>";
+        // tempDiv.innerHTML += "<p class='fighter-props'>Wzrost: " + dataSup.wzrost + " cm</p>";
+        // tempDiv.innerHTML += "<p class='fighter-props'>Wiek: " + dataSup.wiek + "</p>";
+        tempDiv.innerHTML += "<p class='fighter-props-club'>" + dataSup.przynaleznosc + "</p>"
+        tempDiv.style.background = "rgb(34, 34, 34) url('/img/zawodnicy/" + doc.id + ".png')";
+        tempDiv.style.backgroundPosition = "30% 10%"
+        output.appendChild(tempDiv);
+      });
     });
-  });
-  firestore.collection('kluby').get().then(function(querySnapshot) {
-    if (!clubOutput){
+  }
+  
+  if(clubsPage != null){
+    firestore.collection('kluby').get().then(function(querySnapshot) {      
       clubOutput.innerHTML = "";
-    }
-    querySnapshot.forEach(function(doc){
-      var dataSup = doc.data();
+      
+      querySnapshot.forEach(function(doc){
+        var dataSup = doc.data();
+  
+        tempDiv = document.createElement('div');
+        tempDiv.className = "club-box";
+        tempDiv.setAttribute("onclick", "getClubDetails(this)");
+        tempDiv.dataset.clubId = doc.id;
+        tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
+        tempDiv.style.background = "rgb(34, 34, 34) url('/img/kluby/" + doc.id + ".png')";
+        tempDiv.style.backgroundPosition = "center";
+  
+        clubOutput.appendChild(tempDiv);
+      });
+     });
+  }
 
-      tempDiv = document.createElement('div');
-      tempDiv.className = "club-box";
-      tempDiv.setAttribute("onclick", "getClubDetails(this)");
-      tempDiv.dataset.clubId = doc.id;
-      tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/kluby/" + doc.id + ".png')";
-      tempDiv.style.backgroundPosition = "center";
+  if(fightsPage != null){
+      // .orderBy("rodzajwalki")
+      firestore.collection('walki').get().then(function(querySnapshot) {
+        fightsOutput.innerHTML = "";
 
-      clubOutput.appendChild(tempDiv);
+        querySnapshot.forEach(function(doc){
+          var dataSup = doc.data();
+
+          tempDiv = document.createElement('div');
+          tempDiv.className = "fight-box";
+          tempDiv.setAttribute("onclick", "getFightDetails(this)");
+          tempDiv.dataset.fightId = doc.id;
+          tempDiv.innerHTML += "<span class='fighter-one'>" + dataSup.uczestnicy.zawodnik1 + "</span>";
+          tempDiv.innerHTML += "<span class='against-sign'>VS</span>";
+          tempDiv.innerHTML += "<span class='fighter-two'>" + dataSup.uczestnicy.zawodnik2 + "</span>";
+
+          fightsOutput.appendChild(tempDiv);
+        })
+      });
+  }
+
+  if (partnersPage != null){
+    firestore.collection('partnerzy').get().then(function(querySnapshot) {
+      partnersOutput.innerHTML = "";
+  
+      querySnapshot.forEach(function(doc){
+        var dataSup = doc.data();
+  
+        tempDiv = document.createElement('div');
+        tempDiv.className = "club-box";
+        tempDiv.setAttribute("onclick", "getPartnerDetails(this)");
+        tempDiv.dataset.partnerId = doc.id;
+        tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
+        tempDiv.style.background = "rgb(34, 34, 34) url('/img/partnerzy/" + doc.id + ".png')";
+        tempDiv.style.backgroundPosition = "cover";
+  
+        partnersOutput.appendChild(tempDiv);
+      })
     });
-  });
-  firestore.collection('walki').orderBy("rodzajwalki").get().then(function(querySnapshot) {
-    fightsOutput.innerHTML = "";
-
-    querySnapshot.forEach(function(doc){
-      var dataSup = doc.data();
-
-      tempDiv = document.createElement('div');
-      tempDiv.className = "fight-box";
-      tempDiv.setAttribute("onclick", "getFightDetails(this)");
-      tempDiv.dataset.fightId = doc.id;
-      tempDiv.innerHTML += "<span class='fighter-one'>" + dataSup.uczestnicy.zawodnik1 + "</span>";
-      tempDiv.innerHTML += "<span class='against-sign'>VS</span>";
-      tempDiv.innerHTML += "<span class='fighter-two'>" + dataSup.uczestnicy.zawodnik2 + "</span>";
-
-      fightsOutput.appendChild(tempDiv);
-    })
-  });
-  firestore.collection('partnerzy').get().then(function(querySnapshot) {
-    partnersOutput.innerHTML = "";
-
-    querySnapshot.forEach(function(doc){
-      var dataSup = doc.data();
-
-      tempDiv = document.createElement('div');
-      tempDiv.className = "club-box";
-      tempDiv.setAttribute("onclick", "getPartnerDetails(this)");
-      tempDiv.dataset.partnerId = doc.id;
-      tempDiv.innerHTML += "<p class='club-header'>" + dataSup.nazwa + "</p>";
-      tempDiv.style.background = "rgb(34, 34, 34) url('/img/partnerzy/" + doc.id + ".png')";
-      tempDiv.style.backgroundPosition = "cover";
-
-      partnersOutput.appendChild(tempDiv);
-    })
-  });
+  }
 }
 
 getRealtimeUpdates();
 
 function sortBy(type) {
-  console.clear();
   output.innerHTML = "";
 
   var selectedSorting = type.getAttribute("data-sort-by");

@@ -99,12 +99,13 @@ a:focus, a:hover {
   text-align: center;
   margin: auto;
   width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 .fighter-box {
-  width: 25%;
-  float: left;
-  border: 3px solid black;
+  height: 350px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   /* Firefox */
@@ -135,6 +136,7 @@ a:focus, a:hover {
 }
 
 .fighter-props-club {
+  margin-top: 80%;
   font-family: 'Cabin', sans-serif;
   font-size: 1.1em;
   text-align: center;
@@ -291,6 +293,10 @@ a:focus, a:hover {
 }
 
 @media (max-width: 768px) {
+  #fightersList{
+    grid-template-columns: 1fr;
+  }
+
   .fighter-box {
     width: 100%;
   }
@@ -464,9 +470,13 @@ a:focus, a:hover {
   background-color: rgb(34, 34, 34);
 }
 
-.old-galas{
+.old-galas a{
   height: 400px;
+  width: 100%;
   box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr;
+  
 }
 
 .old-gala-header {
@@ -481,7 +491,6 @@ a:focus, a:hover {
   box-sizing: border-box;
   float: left;
   height: 100%;
-  width: 24.8%;
   padding: 25px;
   margin: 1px;
   color: white;
@@ -491,8 +500,7 @@ a:focus, a:hover {
 
 .old-gala:hover{
   margin: 0;
-  border: white 1px solid;
-  background-color: rgba(0, 0, 0, 0.6) !important;
+  background-color: rgb(255, 38, 0) !important;
 }
 
 @media (max-width: 768px){
