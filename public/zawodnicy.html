@@ -22,34 +22,34 @@
   <!-- End Google Tag Manager -->
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Forum Carpathian Warriors. Zapytaj o coś, porozmawiaj z zawodnikami!">
-  <meta name="author" content="Oskar Pietrucha Spartakus">
-  <meta name="keywords" content="carpathian, warriors, mma, spartakus, bitwa o san, sztuki walki, forum, boards, pytanie">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Zawodnicy biorący udział w gali Carpathian Warriors" />
+  <meta name="author" content="Oskar Pietrucha Spartakus" />
+  <meta name="keywords" content="carpathin, warriors, mma, carpathian warriors, bitwa o san, zawodnicy" />
 
-  <title>Carpathian Warriors - Forum</title>
+  <title>Carpathian Warriors - Zawodnicy!</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="/img/carpathian-logo-web.ico" type="image/x-icon"/>
+  <link rel="icon" href="img/carpathian-logo-web.ico" type="image/x-icon"/>
 
   <!-- Bootstrap core CSS -->
-  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Custom fonts TODO: Add .less support and import fonts there.-->
-  <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic|Cabin:700" rel="stylesheet" type="text/css">
 
   <!-- Custom styles -->
-  <link href="/css/master.css" rel="stylesheet">
+  <link href="css/master.css" rel="stylesheet">
 
 </head>
 
 <body id="page-top">
   <!-- Google Tag Manager (noscript) -->
   <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9CW7HT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W9CW7HT" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -65,7 +65,7 @@
             <a class="nav-link js-scroll-trigger" href="/index.html#about">O nas</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/partners.html">Partnerzy</a>
+            <a class="nav-link js-scroll-trigger" href="/partnerzy.html">Partnerzy</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Kontakt</a>
@@ -76,39 +76,36 @@
               MMA
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="/fighters.html">Zawodnicy</a>
-              <a class="dropdown-item" href="/fights.html">Walki</a>
-              <a class="dropdown-item" href="/clubs.html">Kluby</a>
+              <a class="dropdown-item" href="/zawodnicy.html">Zawodnicy</a>
+              <a class="dropdown-item" href="/walki.html">Walki</a>
+              <a class="dropdown-item" href="/forum.htm">Kluby</a>
               <div class="dropdown-divider"></div>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="/boards.html">Forum</a>
+            <a class="nav-link js-scroll-trigger" href="/forum.html">Forum</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Boards Section -->
-  <section id="boards" class="content-section text-center">
+  <!-- Fighters list Section -->
+  <section id="fighters-list" class="content-section text-center">
     <div class="container">
       <div class="row">
         <div class="col-lg-12 mx-auto">
-          <div id="disqus_thread"></div>
-          <script>
-            (function () {
-              var d = document,
-                s = d.createElement('script');
-              s.src = 'https://carpathianwarriors.disqus.com/embed.js';
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-            })();
-          </script>
-          <noscript>Proszę uruchomić JavaScript aby
-            <a href="https://disqus.com/?ref_noscript">korzystać z Disqus.</a>
-          </noscript>
-
+          <h2>Przeglądaj zawodników według:</h2>
+          <div id="sort-by">
+            <span onclick="sortBy(this)" data-sort-by="nazwisko" class="sort-data" ;>Alfabetycznie</span> |
+            <span onclick="sortBy(this)" data-sort-by="przynaleznosc" class="sort-data" ;>Klubu</span> |
+            <span onclick="sortBy(this)" data-sort-by="waga" class="sort-data" ;>Wagi</span> |
+            <span onclick="sortBy(this)" data-sort-by="wiek" class="sort-data" ;>Wieku</span> |
+            <span onclick="sortBy(this)" data-sort-by="wzrost" class="sort-data" ;>Wzrostu</span>
+          </div>
+          <br />
+          <div id="fightersList">
+          </div>
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ var config = {
   messagingSenderId: "24911101713"
 };
 firebase.initializeApp(config);
-var firestore = firebase.firestore();
+var firestore = firebase.firestore().enablePersistence();
 
 const output = document.getElementById('fightersList');
 const clubOutput = document.getElementById('clubsList');
@@ -41,8 +41,9 @@ getRealtimeUpdates = function() {
     });
   });
   firestore.collection('kluby').get().then(function(querySnapshot) {
-    clubOutput.innerHTML = "";
-
+    if (!clubOutput){
+      clubOutput.innerHTML = "";
+    }
     querySnapshot.forEach(function(doc){
       var dataSup = doc.data();
 
