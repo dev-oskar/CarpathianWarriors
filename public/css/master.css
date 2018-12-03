@@ -182,9 +182,9 @@ a:focus, a:hover {
 }
 
 .detail-section-avatar {
-  z-index: 1;
+  /* z-index: 1;
   position: absolute;
-  top: 15%;
+  top: 15%; */
 }
 
 .close-details {
