@@ -138,7 +138,13 @@ function sortBy(type) {
   });
 }
 
-function getFighterDetails(fighterId) {
+function getFighterDetails(fighterId, detailsType) {
+
+  // switch (detailsType){
+  //   case "long":
+  //     var det
+  //     break;
+  // }
 
   var selectedFighter = fighterId.getAttribute('data-fighter-id');
 
@@ -226,8 +232,9 @@ function getFightDetails(fightId) {
 
     // Odniesienie do pierwszego zawodnika
     fighterOneSup.get().then(function(doc){
-      //  Inicjalizacja zmiennych
+      // Inicjalizacja zmiennych
       var fighterOneName = doc.data().imie + " " + doc.data().nazwisko;
+      // Div główny (container) dla zawodników
       var tempDiv = document.createElement('div');
       // CSS 
       tempDiv.className = 'fighterOneBox';
@@ -238,7 +245,7 @@ function getFightDetails(fightId) {
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Waga: </span>" + doc.data().waga + " kg</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wzrost: </span>" + doc.data().wzrost + " cm</p>";
       tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node'>Wiek: </span>" + doc.data().wiek + "</p>";
-      tempDiv.innerHTML += "<p class='detail-section-text'><span class='detail-section-node' style='line-height: normal;'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
+      tempDiv.innerHTML += "<p class='detail-section-text' style='line-height: normal;'><span class='detail-section-node'>Klub: </span>" + doc.data().przynaleznosc + "</p>";
       // Dodanie zawodnika (child) do okna (parent) 
       detailsDiv.innerHTML += "<p class='against-sign-fight'>VS.</p>"
       detailsDiv.appendChild(tempDiv);
